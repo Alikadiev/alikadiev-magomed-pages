@@ -30,8 +30,6 @@ jobs:
           test -f _site/projects/skalny-domik-grot/index.html
           sha256sum --check gallery-update.sha256
           tar -xzf gallery-update.tar.gz -C _site
-          sha256sum --check stone-update.sha256
-          tar -xzf stone-update.tar.gz -C _site
           test -f _site/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
