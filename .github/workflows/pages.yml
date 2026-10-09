@@ -22,6 +22,9 @@ jobs:
           sha256sum --check site-build.sha256
           mkdir _site
           tar -xzf site-build.tar.gz -C _site
+          sha256sum --check site-update.sha256
+          tar -xzf site-update.tar.gz -C _site
+          test -f _site/projects/sadovye-kashpo/index.html
           test -f _site/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
