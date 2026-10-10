@@ -41,6 +41,8 @@ jobs:
           tar -xzf painting-card-details-update.tar.gz -C _site
           sha256sum --check painting-serif-update.sha256
           tar -xzf painting-serif-update.tar.gz -C _site
+          sha256sum --check painting-cormorant-update.sha256
+          tar -xzf painting-cormorant-update.tar.gz -C _site
           test -f _site/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
