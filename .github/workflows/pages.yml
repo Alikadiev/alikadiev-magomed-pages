@@ -32,6 +32,8 @@ jobs:
           tar -xzf gallery-update.tar.gz -C _site
           sha256sum --check painting-color-update.sha256
           tar -xzf painting-color-update.tar.gz -C _site
+          sha256sum --check painting-depth-update.sha256
+          tar -xzf painting-depth-update.tar.gz -C _site
           test -f _site/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
