@@ -43,6 +43,14 @@ jobs:
           tar -xzf painting-serif-update.tar.gz -C _site
           sha256sum --check painting-cormorant-update.sha256
           tar -xzf painting-cormorant-update.tar.gz -C _site
+          cat paintings-replacement-update.part-* > paintings-replacement-update.tar.gz
+          sha256sum --check paintings-replacement-update.sha256
+          rm -rf _site/paintings _site/images/paintings
+          tar -xzf paintings-replacement-update.tar.gz -C _site
+          test -f _site/paintings/zakat-525/index.html
+          test -f _site/paintings/akhmedkent/index.html
+          test ! -e _site/paintings/rabota-01
+          test ! -e _site/images/paintings/painting-1.png
           test -f _site/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
