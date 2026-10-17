@@ -81,6 +81,9 @@ jobs:
           tar -xzf spring-study-update.tar.gz -C _site
           test -f _site/paintings/predchuvstvie-vesny-000/index.html
           test -f _site/images/paintings/predchuvstvie-vesny-000-framed.png
+          sha256sum --check grot-specs-update.sha256
+          tar -xzf grot-specs-update.tar.gz -C _site
+          test -f _site/projects/skalny-domik-grot/index.html
           test -f _site/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
