@@ -90,6 +90,9 @@ jobs:
           sha256sum --check about-review-update.sha256
           tar -xzf about-review-update.tar.gz -C _site
           test -f _site/about/index.html
+          sha256sum --check about-wiki-update.sha256
+          tar -xzf about-wiki-update.tar.gz -C _site
+          test -f _site/about/index.html
           test -f _site/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
