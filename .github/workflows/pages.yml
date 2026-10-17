@@ -62,6 +62,13 @@ jobs:
           tar -xzf free-copies-update.tar.gz -C _site
           test -f _site/paintings/tanets-sredi-mechey-512/index.html
           test -f _site/paintings/buket-v-siney-vaze-kopiya/index.html
+          cat grot-photos-update.part-* > grot-photos-update.tar.gz
+          sha256sum --check grot-photos-update.sha256
+          rm -rf _site/images/projects/skalny-domik-grot
+          tar -xzf grot-photos-update.tar.gz -C _site
+          test -f _site/images/projects/skalny-domik-grot/grot-01.jpeg
+          test -f _site/images/projects/skalny-domik-grot/grot-17.jpeg
+          test ! -e _site/images/projects/skalny-domik-grot/IMG_20260915_202439.jpg
           test -f _site/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
