@@ -84,6 +84,9 @@ jobs:
           sha256sum --check grot-specs-update.sha256
           tar -xzf grot-specs-update.tar.gz -C _site
           test -f _site/projects/skalny-domik-grot/index.html
+          sha256sum --check about-biography-update.sha256
+          tar -xzf about-biography-update.tar.gz -C _site
+          test -f _site/about/index.html
           test -f _site/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
