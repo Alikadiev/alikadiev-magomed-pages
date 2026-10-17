@@ -99,6 +99,9 @@ jobs:
           sha256sum --check about-birth-update.sha256
           tar -xzf about-birth-update.tar.gz -C _site
           test -f _site/about/index.html
+          sha256sum --check about-name-update.sha256
+          tar -xzf about-name-update.tar.gz -C _site
+          test -f _site/about/index.html
           test -f _site/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
