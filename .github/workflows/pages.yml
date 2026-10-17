@@ -69,6 +69,13 @@ jobs:
           test -f _site/images/projects/skalny-domik-grot/grot-01.jpeg
           test -f _site/images/projects/skalny-domik-grot/grot-17.jpeg
           test ! -e _site/images/projects/skalny-domik-grot/IMG_20260915_202439.jpg
+          cat grot-recalc-update.part-* > grot-recalc-update.tar.gz
+          sha256sum --check grot-recalc-update.sha256
+          rm -rf _site/images/projects/skalny-domik-grot
+          tar -xzf grot-recalc-update.tar.gz -C _site
+          test -f _site/images/projects/skalny-domik-grot/grot-recalc-01.jpg
+          test -f _site/images/projects/skalny-domik-grot/grot-recalc-17.jpeg
+          test ! -e _site/images/projects/skalny-domik-grot/grot-01.jpeg
           test -f _site/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
