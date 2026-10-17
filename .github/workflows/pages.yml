@@ -57,6 +57,11 @@ jobs:
           sha256sum --check heading-wrap-update.sha256
           tar -xzf heading-wrap-update.tar.gz -C _site
           test -f _site/paintings/index.html
+          cat free-copies-update.part-* > free-copies-update.tar.gz
+          sha256sum --check free-copies-update.sha256
+          tar -xzf free-copies-update.tar.gz -C _site
+          test -f _site/paintings/tanets-sredi-mechey-512/index.html
+          test -f _site/paintings/buket-v-siney-vaze-kopiya/index.html
           test -f _site/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
