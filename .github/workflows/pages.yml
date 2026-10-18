@@ -121,6 +121,11 @@ jobs:
           sha256sum --check messenger-badges-update.sha256
           tar -xzf messenger-badges-update.tar.gz -C _site
           test -f _site/icons/max.svg
+          sha256sum --check remove-copy-2012-update.sha256
+          tar -xzf remove-copy-2012-update.tar.gz -C _site
+          rm -rf _site/paintings/bez-nazvaniya-kopiya-2012
+          rm -f _site/images/paintings/free-copy-2012.jpeg
+          test ! -e _site/paintings/bez-nazvaniya-kopiya-2012
           test -f _site/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
