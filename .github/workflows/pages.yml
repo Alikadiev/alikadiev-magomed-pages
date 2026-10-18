@@ -126,6 +126,8 @@ jobs:
           rm -rf _site/paintings/bez-nazvaniya-kopiya-2012
           rm -f _site/images/paintings/free-copy-2012.jpeg
           test ! -e _site/paintings/bez-nazvaniya-kopiya-2012
+          sha256sum --check framed-catalog-update.sha256
+          tar -xzf framed-catalog-update.tar.gz -C _site
           test -f _site/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
