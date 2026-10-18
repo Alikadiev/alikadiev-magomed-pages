@@ -102,6 +102,12 @@ jobs:
           sha256sum --check about-name-update.sha256
           tar -xzf about-name-update.tar.gz -C _site
           test -f _site/about/index.html
+          sha256sum --check grot-extra-update.sha256
+          tar -xzf grot-extra-update.tar.gz -C _site
+          sha256sum --check grot-extra-assets.sha256
+          cp grot-extra-assets/* _site/images/projects/skalny-domik-grot/
+          test -f _site/images/projects/skalny-domik-grot/grot-extra-12.jpeg
+          test -f _site/projects/skalny-domik-grot/index.html
           test -f _site/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
