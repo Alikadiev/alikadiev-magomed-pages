@@ -118,6 +118,9 @@ jobs:
           tar -xzf messengers-update.tar.gz -C _site
           test -f _site/contacts/index.html
           test -f _site/icons/whatsapp.svg
+          sha256sum --check messenger-badges-update.sha256
+          tar -xzf messenger-badges-update.tar.gz -C _site
+          test -f _site/icons/max.svg
           test -f _site/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
