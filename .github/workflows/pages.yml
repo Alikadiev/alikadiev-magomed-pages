@@ -108,6 +108,12 @@ jobs:
           cp grot-extra-assets/* _site/images/projects/skalny-domik-grot/
           test -f _site/images/projects/skalny-domik-grot/grot-extra-12.jpeg
           test -f _site/projects/skalny-domik-grot/index.html
+          sha256sum --check six-studies-update.sha256
+          tar -xzf six-studies-update.tar.gz -C _site
+          sha256sum --check author-studies-assets.sha256
+          cp author-studies-assets/* _site/images/paintings/
+          test -f _site/paintings/k-oseni-119/index.html
+          test -f _site/paintings/seryy-den-249/index.html
           test -f _site/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
