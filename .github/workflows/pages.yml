@@ -130,6 +130,8 @@ jobs:
           tar -xzf framed-catalog-update.tar.gz -C _site
           sha256sum --check forest-number-update.sha256
           tar -xzf forest-number-update.tar.gz -C _site
+          sha256sum --check painting-corrections-update.sha256
+          tar -xzf painting-corrections-update.tar.gz -C _site
           test -f _site/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
