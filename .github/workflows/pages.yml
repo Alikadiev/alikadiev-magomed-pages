@@ -132,7 +132,12 @@ jobs:
           tar -xzf forest-number-update.tar.gz -C _site
           sha256sum --check painting-corrections-update.sha256
           tar -xzf painting-corrections-update.tar.gz -C _site
+          cat audit-update.part-* > audit-update.tar.gz
+          sha256sum --check audit-update.sha256
+          tar -xzf audit-update.tar.gz -C _site
           test -f _site/index.html
+          node --test scripts/verify-pages-output.test.mjs
+          node scripts/verify-pages-output.mjs _site
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:
