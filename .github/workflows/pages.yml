@@ -139,6 +139,8 @@ jobs:
           tar -xzf grot-video-update.tar.gz -C _site
           mkdir -p _site/videos/grot
           cp grot-video-assets/* _site/videos/grot/
+          sha256sum --check grot-video-row-update.sha256
+          tar -xzf grot-video-row-update.tar.gz -C _site
           test -f _site/index.html
           node --test scripts/verify-pages-output.test.mjs
           node scripts/verify-pages-output.mjs _site
