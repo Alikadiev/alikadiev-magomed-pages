@@ -135,6 +135,10 @@ jobs:
           cat audit-update.part-* > audit-update.tar.gz
           sha256sum --check audit-update.sha256
           tar -xzf audit-update.tar.gz -C _site
+          sha256sum --check grot-video-update.sha256
+          tar -xzf grot-video-update.tar.gz -C _site
+          mkdir -p _site/videos/grot
+          cp grot-video-assets/* _site/videos/grot/
           test -f _site/index.html
           node --test scripts/verify-pages-output.test.mjs
           node scripts/verify-pages-output.mjs _site
